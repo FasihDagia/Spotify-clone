@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    padding: 10px;
+}
+
+#left{
+    width: 25vw;
+    height: 100vh;
+    gap: 8px;
+}
+
+#right{
+    width: 75vw;
+    height: 100vh;
+}
+
+#home{
+    /* height: 25%; */
+    width: 100%;
+    gap: 10px;
+} 
+
+ #library{
+    /* height: 75%; */
+    width: 100%;
+}
+
+#home ul li{
+    width: 30px;
+    gap: 18px;
+}
