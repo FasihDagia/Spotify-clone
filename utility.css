@@ -33,6 +33,10 @@ align-items: center;
     border-radius: 7px;
 }
 
+.rounded-2{
+    border-radius: 5px;
+}
+
 .fldir-column{
     flex-direction: column;
 }

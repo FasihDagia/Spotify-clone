@@ -74,3 +74,22 @@ body{
 .footer a{
     color: rgb(128, 128, 128);
 }
+
+#header{
+    height: 12%;
+    width: 100%;
+    /* border: 2px solid rebeccapurple; */
+    justify-content: space-between;
+    background-color: #252525;
+    margin: 15px;
+}
+
+#nav{
+    gap: 15px;
+    margin: 5px 0 0 20px;
+}
+
+#header img{
+
+    width: 50px;
+}
