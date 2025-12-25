@@ -97,19 +97,33 @@ body{
 }
 
 #buttons button{
-    font-size: 17px;
+    
     font-weight: 700;
     border: none;
     cursor: pointer;
 }
 
 .login-btn{
+    font-size: 17px;
     border-radius: 25px;
     padding: 15px;
     width: 100px;
 }
 
 .signup-btn{
+    font-size: 17px;
     background: none;
     color: rgb(179, 179, 179);
+}
+
+.login-btn:hover{
+    padding: 17px;
+    transition:0.2s;
+    border-radius: 35px;
+}
+
+.signup-btn:hover{
+    color: white;
+    font-size: 19px;
+    transition: 0.2s ;
 }
