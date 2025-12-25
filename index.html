@@ -1,29 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web-Player</title>
+    <title>Soptify - Web Palyer: Music for everyone</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utility.css">
 </head>
+
 <body>
     <div class="container flex bg-black">
-    <div id="left" class="flex border fldir-column">
-        <div id="home" class="bg-grey rounded flex fldir-column p-1">
-            <ul class="flex fldir-column">
-                <li class="flex align-center m-3"><img src="img/logo.svg" alt="home" class="invert"></li>
-                <li class="flex align-center m-3"><img src="img/home.svg" alt="home" class="invert">Home</li>
-                <li class="flex align-center m-3"><img src="img/search.svg" alt="search" class="invert">Search</li>
-            </ul>
+        <div id="left" class="flex border fldir-column">
+            <div id="home" class="bg-grey rounded flex fldir-column p-1">
+                <ul class="flex fldir-column">
+                    <li class="flex align-center m-3"><img src="img/logo.svg" alt="logo" class="invert"></li>
+                    <li class="flex align-center m-3"><img src="img/home.svg" alt="home" class="invert">Home</li>
+                    <li class="flex align-center m-3"><img src="img/search.svg" alt="search" class="invert">Search</li>
+                </ul>
+            </div>
+            <div id="library" class="bg-grey rounded p-1">
+                <div class="heading flex align-center m-3">
+                    <img src="img/playlist.svg" class="invert" alt="playlist">
+                    <h2>Your library</h2>
+                </div>
+                <div class="footer flex">
+                    <div class="footer flex">
+                        <div><a href="https://www.spotify.com/jp/legal/"><span>Legal</span></a></div>
+                        <div><a href="https://www.spotify.com/jp/privacy/"><span>Privacy Center</span></a></div>
+                        <div><a href="https://www.spotify.com/jp/legal/privacy-policy/"><span>Privacy Policy</span></a>
+                        </div>
+                        <div><a href="https://www.spotify.com/jp/legal/cookies-policy/"><span>Cookies</span></a></div>
+                        <div><a href="https://www.spotify.com/jp/legal/privacy-policy/#s3"><span>About Ads</span></a>
+                        </div>
+                        <div><a href="https://www.spotify.com/jp/accessibility/"><span>Accessibility</span></a></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="library" class="bg-grey rounded p-1">
-            Your library
+        <div id="right" class="flex border bg-grey rounded">
+
         </div>
-    </div>
-    <div id="right" class="flex border bg-grey rounded">
-        
-    </div>
     </div>
 </body>
+
 </html>
