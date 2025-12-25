@@ -41,7 +41,6 @@ body{
 }
 
 #home ul li{
-    width: 30px;
     gap: 18px;
     font-weight: bold;
     font-size: 16px;
@@ -78,7 +77,6 @@ body{
 #header{
     height: 12%;
     width: 100%;
-    /* border: 2px solid rebeccapurple; */
     justify-content: space-between;
     background-color: #252525;
     margin: 15px;
@@ -90,6 +88,28 @@ body{
 }
 
 #header img{
-
     width: 50px;
+}
+
+#buttons{
+    margin:4px 30px 0 0;
+    gap: 25px;
+}
+
+#buttons button{
+    font-size: 17px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+.login-btn{
+    border-radius: 25px;
+    padding: 15px;
+    width: 100px;
+}
+
+.signup-btn{
+    background: none;
+    color: rgb(179, 179, 179);
 }

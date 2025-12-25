@@ -21,6 +21,19 @@ align-items: center;
     color: white;
 }
 
+.bg-white{
+    background-color: white;
+    color: black;
+}
+
+.width-1{
+    width: 100%;
+}
+
+.width-2{
+    width: 30px;
+}
+
 .invert{
     filter: invert(1);
 }
