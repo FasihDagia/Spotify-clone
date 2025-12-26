@@ -1,64 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif
 }
 
-body{
+body {
     font-family: "Roboto", sans-serif
 }
 
-.container{
+.container {
     padding: 10px;
 }
 
-#left{
+#left {
     width: 25vw;
     height: 100vh;
     gap: 8px;
 }
 
-#right{
+#right {
     width: 75vw;
     height: 100vh;
 }
 
-#home{
+#home {
     width: 100%;
     gap: 10px;
     padding-bottom: 5px;
-} 
+}
 
-#library{
+#library {
     height: 75%;
     width: 100%;
     position: relative;
 }
 
-#home ul li{
+#home ul li {
     gap: 18px;
     font-weight: bold;
     font-size: 16px;
 }
 
-.heading{
+.heading {
     width: 100%;
     gap: 20px;
     font-size: 17px;
 }
 
-.heading img{
+.heading img {
     width: 30px;
 }
 
-.heading h2{
+.heading h2 {
     font-size: 18px;
 }
 
-.footer{
+.footer {
     font-size: 10px;
     width: 93%;
     gap: 10px;
@@ -68,60 +68,85 @@ body{
     bottom: 0;
 }
 
-.footer a{
+.footer a {
     color: rgb(128, 128, 128);
 }
 
-#header{
+#header {
     height: 11%;
-    width: 100%;
+    width: 97.3%;
     justify-content: space-between;
     background-color: #252525;
     margin: 15px;
 }
 
-#nav{
+#nav {
     gap: 15px;
     margin: 5px 0 0 20px;
 }
 
-#header img{
+#header img {
     width: 50px;
 }
 
-#buttons{
-    margin:4px 30px 0 0;
+#buttons {
+    margin: 4px 30px 0 0;
     gap: 25px;
 }
 
-#buttons button{
-    
+#buttons button {
+
     font-weight: 700;
     border: none;
     cursor: pointer;
 }
 
-.login-btn{
+.login-btn {
     font-size: 17px;
     border-radius: 25px;
     padding: 15px;
     width: 100px;
 }
 
-.signup-btn{
+.signup-btn {
     font-size: 17px;
     background: none;
     color: rgb(179, 179, 179);
 }
 
-.login-btn:hover{
+.login-btn:hover {
     padding: 17px;
-    transition:0.2s;
+    transition: 0.2s;
     border-radius: 35px;
 }
 
-.signup-btn:hover{
+.signup-btn:hover {
     color: white;
     font-size: 19px;
-    transition: 0.2s ;
+    transition: 0.2s;
+}
+
+.playList h1 {
+    margin: 15px 0 10px 40px;
+}
+
+.card {
+    width: 235px;
+    background-color: #252525;
+    gap: 8px;
+    padding: 10px;
+}
+
+.card img {
+    width: 215px;
+    border-radius: 5px;
+}
+
+.card h2 {
+    font-size: 20px;
+}
+
+.card p {
+    font-size: 12px;
+    color:rgb(179, 179, 179);
 }
