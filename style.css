@@ -27,7 +27,6 @@ body{
 }
 
 #home{
-    height: 25%;
     width: 100%;
     gap: 10px;
     padding-bottom: 5px;
@@ -36,7 +35,6 @@ body{
 #library{
     height: 75%;
     width: 100%;
-    /* min-height: 72.3vh; */
     position: relative;
 }
 
@@ -63,8 +61,8 @@ body{
 .footer{
     font-size: 10px;
     width: 93%;
-    gap: 13px;
-    margin: 8px;
+    gap: 10px;
+    margin: 8px 0 10px 0;
     margin-right: 0px;
     position: absolute;
     bottom: 0;
@@ -75,7 +73,7 @@ body{
 }
 
 #header{
-    height: 12%;
+    height: 11%;
     width: 100%;
     justify-content: space-between;
     background-color: #252525;
