@@ -35,6 +35,7 @@ body {
 #right {
     width: 75vw;
     height: 100vh;
+    position: relative;
 }
 
 #home {
@@ -120,8 +121,9 @@ body {
 .login-btn {
     font-size: 17px;
     border-radius: 25px;
-    padding: 15px;
+    padding: 10px;
     width: 100px;
+    transition: 0.2s;
 }
 
 .signup-btn {
@@ -131,9 +133,9 @@ body {
 }
 
 .login-btn:hover {
-    padding: 17px;
-    transition: 0.2s;
-    border-radius: 35px;
+    padding: 13px;
+    font-size: 18px;
+    
 }
 
 .signup-btn:hover {
@@ -159,7 +161,7 @@ body {
     overflow: scroll;
     overflow-y: scroll;
     overflow-x: hidden;
-    max-height: 68vh;
+    max-height: 61vh;
 }
 
 .cardContainer::-webkit-scrollbar{
@@ -216,4 +218,15 @@ body {
 .card:hover .play {
     top: 145px;
     opacity: 1;
+}
+
+.player{
+    position: absolute;
+    bottom: 0;
+    width: 98%;
+    height: 10%;
+    background-color: #25262a;
+    margin: 0px 10px 15px 12px;
+    border-radius: 7px;
+    padding: 12px;
 }
