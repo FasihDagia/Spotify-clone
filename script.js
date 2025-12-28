@@ -33,8 +33,10 @@ async function main() {
                                 <Span>${element.replaceAll('%20', ' ').replace('.mp3', '')}</Span>
                                 <p>Anonymous</p>
                             </span>
+                            <div class="libplay flex">
                             <span class="playnow">Play Now</span>
                             <img src="img/play.svg" alt="playsong" class="invert">
+                            </div>
                         </li>`
     }
 

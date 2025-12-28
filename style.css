@@ -271,6 +271,7 @@ body {
     border: 1px solid white;
     width: 100%;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .librarysongs ul li img {
@@ -286,4 +287,8 @@ body {
     margin: 6px 0 0 4px;
     font-size: 15px;
     font-weight: bold;
+}
+
+.libplay{
+    gap:25px;
 }
