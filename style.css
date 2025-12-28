@@ -229,4 +229,14 @@ body {
     margin: 0px 10px 15px 12px;
     border-radius: 7px;
     padding: 12px;
+    
+}
+
+.playerbtns img{
+    cursor: pointer;
+}
+
+.playerbtns{
+    padding: 12px;
+    gap: 30px;
 }
