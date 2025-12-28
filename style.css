@@ -11,12 +11,12 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 11px;
     background-color: black;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
     background-color: #252525;
     height: 10vh;
     border-radius: 3px;
@@ -48,6 +48,7 @@ body {
     height: 75%;
     width: 100%;
     position: relative;
+
 }
 
 #home ul li {
@@ -135,7 +136,7 @@ body {
 .login-btn:hover {
     padding: 13px;
     font-size: 18px;
-    
+
 }
 
 .signup-btn:hover {
@@ -144,7 +145,7 @@ body {
     transition: 0.2s;
 }
 
-.playList{
+.playList {
     min-height: auto;
     max-height: 80%;
     height: auto;
@@ -164,7 +165,7 @@ body {
     max-height: 61vh;
 }
 
-.cardContainer::-webkit-scrollbar{
+.cardContainer::-webkit-scrollbar {
     width: 0px;
     height: 0px;
 }
@@ -220,7 +221,7 @@ body {
     opacity: 1;
 }
 
-.player{
+.player {
     position: absolute;
     bottom: 0;
     width: 98%;
@@ -229,14 +230,60 @@ body {
     margin: 0px 10px 15px 12px;
     border-radius: 7px;
     padding: 12px;
-    
+
 }
 
-.playerbtns img{
+.playerbtns img {
     cursor: pointer;
 }
 
-.playerbtns{
+.playerbtns {
     padding: 12px;
     gap: 30px;
+}
+
+.librarysongs {
+    margin: 25px 0 0 0;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 50vh;
+}
+
+.librarysongs::-webkit-scrollbar-thumb {
+    visibility: hidden;
+}
+
+.librarysongs::-webkit-scrollbar {
+    visibility: hidden;
+}
+
+
+.librarysongs ul {
+    padding: 0 20px;
+}
+
+.librarysongs ul li {
+    margin: 5px 0;
+    list-style: none;
+    gap: 25px;
+    padding: 20px 10px;
+    border: 1px solid white;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.librarysongs ul li img {
+    width: 30px;
+}
+
+.songDetails {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.playnow {
+    margin: 6px 0 0 4px;
+    font-size: 15px;
+    font-weight: bold;
 }
