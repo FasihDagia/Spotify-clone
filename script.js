@@ -85,7 +85,6 @@ async function main() {
     play.addEventListener('click', () => {
         if (currentSong.paused) {
             currentSong.play()
-            console.log('play');
             play.src = 'img/pause.svg'
             
         } else {
@@ -101,7 +100,7 @@ async function main() {
     })
 
     bar.addEventListener('click',(e) => {
-        let percent = e.pageX/bar.clientWidth;
+        let percent = (e.offsetX/bar.clientWidth)*100;
         circle.style.left = `${percent}%`
     })
 

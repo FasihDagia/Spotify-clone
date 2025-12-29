@@ -252,6 +252,7 @@ body {
     padding: 0;
     bottom: 1px;
     margin: 10px;
+    cursor: pointer;
 }
 
 .circle{
