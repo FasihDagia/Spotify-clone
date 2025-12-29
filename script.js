@@ -2,6 +2,8 @@ let currentSong = new Audio();
 let play = document.querySelector("#play");
 let next = document.querySelector("#next");
 let previous = document.querySelector("#previous");
+let circle = document.querySelector(".circle");
+let bar = document.querySelector(".seekbar")
 
 function formatTime(seconds) {
     if (isNaN(seconds) || seconds < 0) return "00:00";
@@ -92,28 +94,17 @@ async function main() {
         }
     })
 
-    // next.addEventListener('click',() => {
-    //     currentSong.next
-    // })
-
     currentSong.addEventListener('timeupdate', () => {
-        // console.log(formatTime(currentSong.currentTime),formatTime( currentSong.duration));
         document.querySelector('.songtime').innerHTML = `${formatTime(currentSong.currentTime)}/${formatTime(currentSong.duration)}`
+        let per = calculatePercentage(currentSong.currentTime, currentSong.duration)
+        circle.style.left = `${per}%`
     })
 
-    currentSong.addEventListener('timeupdate', () => {
-        let per = calculatePercentage(currentSong.currentTime, currentSong.duration)
-        document.querySelector('.circle').style.left = `${per}%`
-    }
-    )
+    bar.addEventListener('click',(e) => {
+        let percent = e.pageX/bar.clientWidth;
+        circle.style.left = `${percent}%`
+    })
 
-    // var audio = new Audio(songs[0]);
-
-    // audio.addEventListener("ontimeupdate", () => {
-    //     let duration = audio.duration;
-    //     console.log(duration);
-
-    // });
 
 }
 
