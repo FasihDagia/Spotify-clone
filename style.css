@@ -238,15 +238,20 @@ body {
 }
 
 .playerbtns {
+    margin: 5px;
     padding: 12px;
     gap: 30px;
 }
 
 .seekbar{
-    width: 100%;
+    position: absolute;
+    width: 98%;
     height: 3px;
     background-color: white;
     border: 1px solid white;
+    padding: 0;
+    bottom: 1px;
+    margin: 10px;
 }
 
 .circle{
@@ -254,6 +259,42 @@ body {
     height: 15px;
     border-radius: 50%;
     background-color: white;
+    position: absolute;
+    bottom: -7px;
+    left: 0px;
+    transition: left .5s;
+}
+
+.songfunc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+    font-weight: bold;
+}
+
+.songinfo {
+    flex: 1;
+    text-align: left;
+    color: white;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.playerbtns {
+    flex: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.songtime {
+    flex: 1;
+    text-align: right;
+    color: white;
+    font-size: 14px;
 }
 
 .librarysongs {
@@ -306,4 +347,5 @@ body {
 .libplay{
     gap:25px;
 }
+
 
