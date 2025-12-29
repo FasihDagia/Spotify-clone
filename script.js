@@ -56,13 +56,13 @@ const playMusic = (track, pause = false) => {
         currentSong.play()
         play.src = 'img/pause.svg'
     }
-    document.querySelector('.songinfo').innerHTML = track.replace(".mp3", "").replace("http://127.0.0.1:5500/songs/","")
+    document.querySelector('.songinfo').innerHTML = track.replace(".mp3", "").replace("http://127.0.0.1:5500/songs/", "")
     document.querySelector('.songtime').innerHTML = "00:00/00:00"
 }
 
 async function main() {
     let songs = await getSongs();
-    playMusic(songs[0].replace("http://127.0.0.1:5500/songs/",""), true)
+    playMusic(songs[0].replace("http://127.0.0.1:5500/songs/", ""), true)
 
     let songUL = document.querySelector('.librarysongs').getElementsByTagName('ul')[0];
 
@@ -93,7 +93,7 @@ async function main() {
         if (currentSong.paused) {
             currentSong.play()
             play.src = 'img/pause.svg'
-            
+
         } else {
             currentSong.pause()
             play.src = 'img/play.svg'
@@ -104,16 +104,16 @@ async function main() {
         document.querySelector('.songtime').innerHTML = `${formatTime(currentSong.currentTime)}/${formatTime(currentSong.duration)}`
         let per = calculatePercentage(currentSong.currentTime, currentSong.duration)
         circle.style.left = `${per}%`
-        if(currentSong.currentTime === currentSong.duration){
+        if (currentSong.currentTime === currentSong.duration) {
             currentSong.pause()
             play.src = 'img/play.svg'
         }
     })
 
-    bar.addEventListener('click',(e) => {
-        let percent = (e.offsetX/bar.clientWidth)*100;
+    bar.addEventListener('click', (e) => {
+        let percent = (e.offsetX / bar.clientWidth) * 100;
         circle.style.left = `${percent}%`
-        let time = calculatePercentageValue(percent,currentSong.duration)
+        let time = calculatePercentageValue(percent, currentSong.duration)
         currentSong.currentTime = time
 
     })

@@ -243,7 +243,7 @@ body {
     gap: 30px;
 }
 
-.seekbar{
+.seekbar {
     position: absolute;
     width: 98%;
     height: 3px;
@@ -255,7 +255,7 @@ body {
     cursor: pointer;
 }
 
-.circle{
+.circle {
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -345,8 +345,6 @@ body {
     font-weight: bold;
 }
 
-.libplay{
-    gap:25px;
+.libplay {
+    gap: 25px;
 }
-
-
