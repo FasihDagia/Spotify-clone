@@ -5,6 +5,13 @@ let previous = document.querySelector("#previous");
 let circle = document.querySelector(".circle");
 let bar = document.querySelector(".seekbar")
 
+function calculatePercentageValue(percentage, total) {
+    if (typeof percentage !== 'number' || typeof total !== 'number') {
+        throw new Error("Both percentage and total must be numbers.");
+    }
+    return (percentage / 100) * total;
+}
+
 function formatTime(seconds) {
     if (isNaN(seconds) || seconds < 0) return "00:00";
 
@@ -97,11 +104,18 @@ async function main() {
         document.querySelector('.songtime').innerHTML = `${formatTime(currentSong.currentTime)}/${formatTime(currentSong.duration)}`
         let per = calculatePercentage(currentSong.currentTime, currentSong.duration)
         circle.style.left = `${per}%`
+        if(currentSong.currentTime === currentSong.duration){
+            currentSong.pause()
+            play.src = 'img/play.svg'
+        }
     })
 
     bar.addEventListener('click',(e) => {
         let percent = (e.offsetX/bar.clientWidth)*100;
         circle.style.left = `${percent}%`
+        let time = calculatePercentageValue(percent,currentSong.duration)
+        currentSong.currentTime = time
+
     })
 
 
