@@ -136,7 +136,7 @@ async function main() {
 
     next.addEventListener('click', () => {
         let index = songs.indexOf(currentSong.src);
-        if (index == songs.length) {
+        if (index == songs.length-1) {
             playMusic(songs[0].replace("http://127.0.0.1:5500/songs/", ""))
         } else {
             playMusic(songs[index + 1].replace("http://127.0.0.1:5500/songs/", ""));
