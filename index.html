@@ -12,10 +12,10 @@
 <body>
     <div class="container flex bg-black">
         <div id="left" class="flex border fldir-column">
+            <div id="close"><img src="img/close.svg" alt="close" class="invert"></div>
             <div id="home" class="bg-grey rounded flex fldir-column p-1">
                 <ul class="flex fldir-column">
-                    <li class="flex align-center m-3 width-1"><img src="img/logo-1.svg" alt="logo" class="invert"
-                            width="120px"></li>
+                    <li class="flex align-center m-3 width-1"><img src="img/logo-1.svg" alt="logo" class="invert"width="120px"> </li>
                     <li class="flex align-center m-3 width-2"><img src="img/home.svg" alt="home" class="invert">Home
                     </li>
                     <li class="flex align-center m-3 width-2"><img src="img/search.svg" alt="search"
@@ -45,6 +45,7 @@
         <div id="right" class="flex border bg-grey rounded fldir-column">
             <div id="header" class="flex align-center rounded-2">
                 <div id="nav" class="flex justify-center">
+                    <img src="img/hamburger.svg" alt="menu" class="invert" id="menu">
                     <img src="img/back.svg" alt="back" class="invert">
                     <img src="img/forward.svg" alt="forward" class="invert">
                 </div>
@@ -89,7 +90,6 @@
                             <input type="range" id="volumeSlider" min="0.0" max="100.0" value="100">
                         </div>
                     </div>
-                    <div class="volumecontrols"></div>
                     <div class="seekbar">
                         <div class="circle"></div>
                     </div>

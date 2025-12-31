@@ -38,6 +38,10 @@ body {
     position: relative;
 }
 
+#close {
+    display: none;
+}
+
 #home {
     width: 100%;
     gap: 10px;
@@ -105,6 +109,10 @@ body {
 
 #header img {
     width: 50px;
+}
+
+#menu {
+    display: none;
 }
 
 #buttons {
@@ -365,4 +373,84 @@ body {
 
 .libplay {
     gap: 25px;
+}
+
+@media (max-width:1400px) {
+    .container {
+        gap: 0;
+    }
+
+    #left {
+        position: absolute;
+        left: -100%;
+        transition: all .5s;
+        z-index: 1;
+        background-color: black;
+        border: none;
+        width: 373px;
+        padding: 10px;
+        padding-top: 0;
+    }
+
+    #close {
+        display: block;
+        position: absolute;
+        right: 31px;
+        top: 25px;
+        width: 29px;
+    }
+
+    #close img {
+        width: 20px;
+    }
+
+    #right {
+        width: 100vw;
+    }
+
+    #header {
+        height: 8vh;
+        margin: 5px;
+    }
+
+    .player {
+        width: 95vw;
+        height: 25vh;
+        flex-direction: column;
+    }
+
+    .songfunc {
+        flex-direction: column;
+        gap: 5px;
+        margin: 5px;
+    }
+
+    .seekbar {
+        width: 95%;
+    }
+
+    #nav {
+        gap: 5px;
+        margin: 10px;
+    }
+
+    #nav img {
+        width: 30px;
+    }
+
+    #menu {
+        display: block;
+    }
+
+    .login-btn {
+        font-size: 11px;
+        border-radius: 25px;
+        padding: 6px;
+        width: 60px;
+    }
+
+    .signup-btn {
+        font-size: 13px;
+    }
+
 }
