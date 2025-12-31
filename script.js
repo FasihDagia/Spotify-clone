@@ -5,6 +5,7 @@ let previous = document.querySelector("#previous");
 let circle = document.querySelector(".circle");
 let bar = document.querySelector(".seekbar")
 let volumeSlider = document.querySelector("#volumeSlider");
+let songs;
 
 function calculatePercentageValue(percentage, total) {
     if (typeof percentage !== 'number' || typeof total !== 'number') {
@@ -68,12 +69,12 @@ const playMusic = (track, pause = false) => {
         currentSong.play()
         play.src = 'img/pause.svg'
     }
-    document.querySelector('.songinfo').innerHTML = track.replace(".mp3", "").replace("http://127.0.0.1:5500/songs/", "")
+    document.querySelector('.songinfo').innerHTML = decodeURI(track).replace(".mp3", "").replace("http://127.0.0.1:5500/songs/", "")
     document.querySelector('.songtime').innerHTML = "00:00/00:00"
 }
 
 async function main() {
-    let songs = await getSongs();
+    songs = await getSongs();
     playMusic(songs[0].replace("http://127.0.0.1:5500/songs/", ""), true)
 
     let songUL = document.querySelector('.librarysongs').getElementsByTagName('ul')[0];
@@ -97,7 +98,6 @@ async function main() {
     Array.from(document.querySelector('.librarysongs').getElementsByTagName('li')).forEach((e) => {
         e.addEventListener('click', () => {
             playMusic(e.querySelector('.songDetails').firstElementChild.innerHTML + ".mp3");
-            // loadSong(e.querySelector('.songDetails').firstElementChild.innerHTML + ".mp3");
         })
     })
 
@@ -132,6 +132,16 @@ async function main() {
 
     volumeSlider.addEventListener("input", (e) => {
         volumeSet(parseFloat(e.target.value));
+    })
+
+    next.addEventListener('click', () => {
+        let index = songs.indexOf(currentSong.src);
+        if (index == songs.length) {
+            playMusic(songs[0].replace("http://127.0.0.1:5500/songs/", ""))
+        } else {
+            playMusic(songs[index + 1].replace("http://127.0.0.1:5500/songs/", ""));
+        }
+        currentSong.play()
     })
 
 }
