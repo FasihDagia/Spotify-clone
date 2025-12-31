@@ -4,6 +4,7 @@ let next = document.querySelector("#next");
 let previous = document.querySelector("#previous");
 let circle = document.querySelector(".circle");
 let bar = document.querySelector(".seekbar")
+let volumeSlider = document.querySelector("#volumeSlider");
 
 function calculatePercentageValue(percentage, total) {
     if (typeof percentage !== 'number' || typeof total !== 'number') {
@@ -26,6 +27,17 @@ function calculatePercentage(value, total) {
     return (value / total) * 100;
 }
 
+function volumeSet(vol) {
+    if (vol > 50) {
+        document.querySelector('#vol').src = 'img/volume.svg';
+    } else if (vol === 0) {
+        document.querySelector('#vol').src = 'img/mute.svg';
+    } else {
+        document.querySelector('#vol').src = 'img/lowvolume.svg';
+    }
+
+    currentSong.volume = vol / 100;
+}
 
 async function getSongs() {
     let fet = await fetch("http://127.0.0.1:5500/songs/")
@@ -118,6 +130,9 @@ async function main() {
 
     })
 
+    volumeSlider.addEventListener("input", (e) => {
+        volumeSet(parseFloat(e.target.value));
+    })
 
 }
 
