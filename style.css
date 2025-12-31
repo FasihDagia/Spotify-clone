@@ -408,6 +408,18 @@ body {
         width: 100vw;
     }
 
+    #home {
+        gap: 5px;
+        padding: 0px;
+    }
+
+    #home ul li {
+        gap: 18px;
+        font-weight: bold;
+        font-size: 12px;
+        margin: 8px;
+    }
+
     #header {
         height: 8vh;
         margin: 5px;
@@ -415,18 +427,29 @@ body {
 
     .player {
         width: 95vw;
-        height: 25vh;
+        height: 150px;
         flex-direction: column;
+        padding: 5px;
+        gap: 15px;
+    }
+
+    .playerbtns{
+        padding:0px;
+    }
+
+    .playerbtns img {
+        width: 20px;
     }
 
     .songfunc {
         flex-direction: column;
-        gap: 5px;
-        margin: 5px;
+        gap: 12px;
+        align-items: center;
     }
 
     .seekbar {
-        width: 95%;
+        width: 90%;
+        bottom: 0;
     }
 
     #nav {
@@ -453,4 +476,69 @@ body {
         font-size: 13px;
     }
 
+    .login-btn:hover {
+        padding: 6px;
+        font-size: 11px;
+
+    }
+
+    .signup-btn:hover {
+        font-size: 13px;
+        color: rgb(179, 179, 179);
+    }
+
+    .heading {
+        margin: 7px;
+    }
+
+    .footer {
+        font-size: 9px;
+    }
+
+    .librarysongs {
+        margin: 15px 0 0 0;
+        height: 55vh;
+    }
+
+    .libplay {
+        gap: 25px;
+    }
+
+    .librarysongs ul {
+        padding: 0 10px;
+    }
+
+    .librarysongs ul li {
+        padding: 15px 10px;
+    }
+
+    .librarysongs ul li img {
+        width: 25px;
+    }
+
+    .songDetails {
+        font-size: 12px;
+    }
+
+    .playnow {
+        font-size: 13px;
+    }
+
+    .playList h1 {
+        margin: 10px 0 5px 30px;
+    }
+
+    .cardContainer {
+        margin: 10px 0 0 30px;
+        gap: 15px;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .play {
+        top: 240px;
+        opacity: 1;
+    }
 }
