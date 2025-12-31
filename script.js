@@ -136,12 +136,20 @@ async function main() {
 
     next.addEventListener('click', () => {
         let index = songs.indexOf(currentSong.src);
-        if (index == songs.length-1) {
+        if (index === songs.length - 1) {
             playMusic(songs[0].replace("http://127.0.0.1:5500/songs/", ""))
         } else {
             playMusic(songs[index + 1].replace("http://127.0.0.1:5500/songs/", ""));
         }
-        currentSong.play()
+    })
+
+    previous.addEventListener('click', () => {
+        let index = songs.indexOf(currentSong.src);
+        if (index === 0) {
+            playMusic(songs[songs.length - 1].replace("http://127.0.0.1:5500/songs/", ""))
+        } else {
+            playMusic(songs[index - 1].replace("http://127.0.0.1:5500/songs/", ""));
+        }
     })
 
 }
