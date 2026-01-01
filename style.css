@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -375,7 +376,7 @@ body {
     gap: 25px;
 }
 
-@media (max-width:1400px) {
+@media (max-width:1300px) {
     .container {
         gap: 0;
     }
@@ -421,20 +422,19 @@ body {
     }
 
     #header {
-        height: 8vh;
+        height: 10vh;
         margin: 5px;
     }
 
     .player {
         width: 95vw;
-        height: 150px;
-        flex-direction: column;
+        height: 10vh;
         padding: 5px;
         gap: 15px;
     }
 
-    .playerbtns{
-        padding:0px;
+    .playerbtns {
+        padding: 0px;
     }
 
     .playerbtns img {
@@ -442,13 +442,12 @@ body {
     }
 
     .songfunc {
-        flex-direction: column;
         gap: 12px;
-        align-items: center;
+        align-items: space-evenly;
     }
 
     .seekbar {
-        width: 90%;
+        width: 95%;
         bottom: 0;
     }
 
@@ -458,7 +457,7 @@ body {
     }
 
     #nav img {
-        width: 30px;
+        width: 35px;
     }
 
     #menu {
@@ -466,24 +465,24 @@ body {
     }
 
     .login-btn {
-        font-size: 11px;
+        font-size: 13px;
         border-radius: 25px;
-        padding: 6px;
-        width: 60px;
+        padding: 8px;
+        width: 70px;
     }
 
     .signup-btn {
-        font-size: 13px;
+        font-size: 15px;
     }
 
     .login-btn:hover {
-        padding: 6px;
-        font-size: 11px;
+        padding: 8px;
+        font-size: 13px;
 
     }
 
     .signup-btn:hover {
-        font-size: 13px;
+        font-size: 15px;
         color: rgb(179, 179, 179);
     }
 
@@ -533,8 +532,52 @@ body {
         gap: 15px;
     }
 
+
+}
+
+@media (max-width:550px) {
+    #header {
+        height: 8vh;
+    }
+
+    .player {
+        height: 150px;
+        flex-direction: column;
+    }
+
+    .songfunc {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #nav img {
+        width: 30px;
+    }
+
+    .login-btn {
+        font-size: 11px;
+        padding: 6px;
+        width: 60px;
+    }
+
+    .signup-btn {
+        font-size: 13px;
+    }
+
+    .login-btn:hover {
+        padding: 6px;
+        font-size: 11px;
+
+    }
+
+    .signup-btn:hover {
+        font-size: 13px;
+        color: rgb(179, 179, 179);
+    }
+
     .card {
         width: 90%;
+
     }
 
     .play {
