@@ -535,7 +535,7 @@ body {
 
 }
 
-@media (max-width:550px) {
+@media (max-width:450px) {
     #header {
         height: 8vh;
     }
@@ -581,7 +581,7 @@ body {
     }
 
     .play {
-        top: 240px;
+        top: 63%;
         opacity: 1;
     }
 }
