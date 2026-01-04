@@ -85,6 +85,8 @@ async function getAlbums() {
 
 
 const playMusic = (track, pause = false, folder) => {
+    
+    track.replace(`${folder}`, "")
     let src = `/songs/${folder}/` + track
 
     currentSong.src = src;
@@ -97,10 +99,34 @@ const playMusic = (track, pause = false, folder) => {
     document.querySelector('.songtime').innerHTML = "00:00/00:00"
 }
 
+const createPlaylist = async (songs) => {
+    let songUL = document.querySelector('.librarysongs').getElementsByTagName('ul')[0];
+    songUL.innerHTML = "";
+    for (let i = 0; i < songs.length; i++) {
+
+        const element = songs[i].split('/songs/')[1];
+        songUL.innerHTML = songUL.innerHTML + `<li class="flex">
+                            
+                            <img src="img/music.svg" alt="music" class="invert">
+                            <span class="songDetails">
+                                <Span>${element.replace(`${currFolder}/`, "").replaceAll('%20', ' ').replace('.mp3', '')}</Span>
+                                <p>Anonymous</p>
+                            </span>
+                            <div class="libplay flex">
+                            <span class="playnow">Play Now</span>
+                            <img src="img/play.svg" alt="playsong" class="invert">
+                            </div>
+                        </li>`
+    }
+    play.src = 'img/play.svg'
+}
+
+
 async function main() {
     albums = await getAlbums()
-    currFolder = albums[1].replace("http://127.0.0.1:5500/songs/","")
+    currFolder = albums[1].replace("http://127.0.0.1:5500/songs/", "")
     songs = await getSongs(currFolder);
+    await createPlaylist(songs)
     playMusic(songs[0].replace(`http://127.0.0.1:5500/songs/${currFolder}/`, ""), true, currFolder)
 
     let playlistcont = document.querySelector('.cardContainer')
@@ -112,29 +138,22 @@ async function main() {
                             <img src="/img/play.svg" alt="play">
                         </div>
                         <img src="happy-hits.jpg" alt="">
-                        <h2>${element.replaceAll("%20"," ")}</h2>
-                        <p>${element.replaceAll("%20"," ")}</p>
+                        <h2>${element.replaceAll("%20", " ")}</h2>
+                        <p>${element.replaceAll("%20", " ")}</p>
                     </div>`
-
-        
     }
 
-    let songUL = document.querySelector('.librarysongs').getElementsByTagName('ul')[0];
-    for (let i = 0; i < songs.length; i++) {
+    let alb = document.querySelector(".card");
 
-        const element = songs[i].split('/songs/')[1];
-        songUL.innerHTML = songUL.innerHTML + `<li class="flex">
-                            <img src="img/music.svg" alt="music" class="invert">
-                            <span class="songDetails">
-                                <Span>${element.replaceAll('%20', ' ').replace('.mp3', '').replace(`${currFolder}/`, "")}</Span>
-                                <p>Anonymous</p>
-                            </span>
-                            <div class="libplay flex">
-                            <span class="playnow">Play Now</span>
-                            <img src="img/play.svg" alt="playsong" class="invert">
-                            </div>
-                        </li>`
-    }
+    document.querySelectorAll(".card").forEach((e) => {
+        e.addEventListener('click', async () => {
+            let alb_name = e.querySelector("h2").innerHTML;
+            currFolder = alb_name.replaceAll(" ", "%20")
+            songs = await getSongs(currFolder)
+            await createPlaylist(songs)
+            playMusic(songs[0].replace(`http://127.0.0.1:5500/songs/${currFolder}/`, ""), true, currFolder)
+        })
+    })
 
     Array.from(document.querySelector('.librarysongs').getElementsByTagName('li')).forEach((e) => {
         e.addEventListener('click', () => {
@@ -178,18 +197,18 @@ async function main() {
     next.addEventListener('click', () => {
         let index = songs.indexOf(currentSong.src);
         if (index === songs.length - 1) {
-            playMusic(songs[0].replace("http://127.0.0.1:5500/songs/", ""), false, currFolder)
+            playMusic(songs[0].replace(`http://127.0.0.1:5500/songs/${currFolder}/`, ""), false, currFolder)
         } else {
-            playMusic(songs[index + 1].replace("http://127.0.0.1:5500/songs/", ""), false, currFolder);
+            playMusic(songs[index + 1].replace(`http://127.0.0.1:5500/songs/${currFolder}/`, ""), false, currFolder);
         }
     })
 
     previous.addEventListener('click', () => {
         let index = songs.indexOf(currentSong.src);
         if (index === 0) {
-            playMusic(songs[songs.length - 1].replace("http://127.0.0.1:5500/songs/", ""), false, currFolder)
+            playMusic(songs[songs.length - 1].replace(`http://127.0.0.1:5500/songs/${currFolder}/`, ""), false, currFolder)
         } else {
-            playMusic(songs[index - 1].replace("http://127.0.0.1:5500/songs/", ""), false, currFolder);
+            playMusic(songs[index - 1].replace(`http://127.0.0.1:5500/songs/${currFolder}/`, ""), false, currFolder);
         }
     })
 
