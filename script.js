@@ -85,7 +85,7 @@ async function getAlbums() {
 
 
 const playMusic = (track, pause = false, folder) => {
-    
+
     track.replace(`${folder}`, "")
     let src = `/songs/${folder}/` + track
 
@@ -118,6 +118,12 @@ const createPlaylist = async (songs) => {
                             </div>
                         </li>`
     }
+
+    Array.from(document.querySelector('.librarysongs').getElementsByTagName('li')).forEach((e) => {
+        e.addEventListener('click', () => {
+            playMusic(e.querySelector('.songDetails').firstElementChild.innerHTML + ".mp3", false, currFolder);
+        })
+    })
     play.src = 'img/play.svg'
 }
 
@@ -152,12 +158,6 @@ async function main() {
             songs = await getSongs(currFolder)
             await createPlaylist(songs)
             playMusic(songs[0].replace(`http://127.0.0.1:5500/songs/${currFolder}/`, ""), true, currFolder)
-        })
-    })
-
-    Array.from(document.querySelector('.librarysongs').getElementsByTagName('li')).forEach((e) => {
-        e.addEventListener('click', () => {
-            playMusic(e.querySelector('.songDetails').firstElementChild.innerHTML + ".mp3", false, currFolder);
         })
     })
 
@@ -218,8 +218,7 @@ async function main() {
 
     document.querySelector("#close").addEventListener('click', () => {
         document.querySelector("#left").style.left = "-120%";
-    }
-    )
+    })
 
 }
 
